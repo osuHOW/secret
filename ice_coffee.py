@@ -8,7 +8,7 @@ class Flags(Enum):
     CHECKSUM_FAIL = 1 << 4
     FLASHLIGHT_CHECKSUM_FAIL = 1 << 5
     OSU_CHECKSUM = 1 << 6 #We already know...
-    MISSING_PL = 1 << 7 #We already know...
+    MISSING_PL = 1 << 7 #Unused
     FLASHLIGHT_IMAGE = 1 << 8
     SPINNER = 1 << 9
     TRANSPARENT_WINDOW = 1 << 10

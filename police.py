@@ -14,12 +14,12 @@ def call(m, *args, user_id = None, discord_m = False, embed_args = None):
             cache_config()
 
         username = None
-        if user_id is not None:
+        if user_id != None:
             username = userUtils.getUsername(user_id)
             m = m.replace("USERNAME()", username)
 
         if flavours.config["webhook"]["enable"] and discord_m:
-            if embed_args is not None:
+            if embed_args != None:
                 embed = Webhook(flavours.config["webhook"]["url"], 
                                 **embed_args,
                                 footer="Caker by Sunpy @osufx",
