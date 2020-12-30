@@ -70,6 +70,7 @@ def bake(submit, score):
         try:
             pl = aeshelper.decryptRinjdael(aeskey, iv, submit.get_argument("pl"), True).split("\r\n")
         except:
+			eat(score, {}, detected, flags)
             return
 
         pl = sell(pl)
@@ -172,7 +173,7 @@ def eat(score, processes, detected, flags):
                 embed_args={
                         "color": 0xd9534f,
                         "title": "Bad cake detected",
-                        "title_url": "http://old.{}/index.php?p=129&sid={}".format(flavours.config["urls"]["main_domain"], score.scoreID),
+                        "title_url": "http://aap.{}/index.php?p=129&sid={}".format(flavours.config["urls"]["main_domain"], score.scoreID),
                         "desc": "Restricted for: {} {}".format(reason, extra_data),
                         "author": username,
                         "author_icon": "http://a.{}/{}".format(flavours.config["urls"]["main_domain"], score.playerUserID),
@@ -188,7 +189,7 @@ def eat(score, processes, detected, flags):
                 embed_args={
                         "color": 0xf0ad4e,
                         "title": "Bad cake detected",
-                        "title_url": "http://old.{}/index.php?p=129&sid={}".format(flavours.config["urls"]["main_domain"], score.scoreID),
+                        "title_url": "http://aap.{}/index.php?p=129&sid={}".format(flavours.config["urls"]["main_domain"], score.scoreID),
                         "desc": "Had bad cake: {} {}".format(reason, extra_data),
                         "author": username,
                         "author_icon": "http://a.{}/{}".format(flavours.config["urls"]["main_domain"], score.playerUserID),
@@ -203,7 +204,7 @@ def eat(score, processes, detected, flags):
             embed_args={
                     "color": 0xf0ad4e,
                     "title": "Bad flags detected",
-                    "title_url": "http://old.{}/index.php?p=129&sid={}".format(flavours.config["urls"]["main_domain"], score.scoreID),
+                    "title_url": "http://aap.{}/index.php?p=129&sid={}".format(flavours.config["urls"]["main_domain"], score.scoreID),
                     "desc": "({}) -> ({})".format(flags, make_flags_string(flags)),
                     "author": username,
                     "author_icon": "http://a.{}/{}".format(flavours.config["urls"]["main_domain"], score.playerUserID),
