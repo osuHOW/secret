@@ -70,7 +70,8 @@ def bake(submit, score):
         try:
             pl = aeshelper.decryptRinjdael(aeskey, iv, submit.get_argument("pl"), True).split("\r\n")
         except:
-			eat(score, {}, detected, flags)
+		#nice formatting github :upside_down:
+            eat(score, {}, detected, flags)
             return
 
         pl = sell(pl)
